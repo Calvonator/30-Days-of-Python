@@ -13,11 +13,6 @@ def test():
         # This line only runs if no divisors produced integer results
         print(f"{dividend} is prime!")
 
-
-
-
-
-
 def guessGame():
     guessNum = random.randint(1, 100)
     x = 0
