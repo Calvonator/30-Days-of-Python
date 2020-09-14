@@ -5,7 +5,6 @@ class booklist():
 
     def __init__(self):
         self.booklist = []
-        self.new_books = []
         self.load_books()
 
 
@@ -16,8 +15,8 @@ class booklist():
                 b = bl.readlines()
                 
                 for row in b:
-                    details = tuple(row.strip().split(','))
-                    self.booklist.append(details)
+                    book = row.strip().split(',')
+                    self.booklist.append(book)
 
         except:
             print("Book list is currently empty")
@@ -25,18 +24,24 @@ class booklist():
 
     def save_books(self):
 
-        with open('booklist.csv', 'a') as bl:
-            for b in self.new_books:
-                details = f"{b[0].strip()}, {b[1].strip()}, {b[2].strip()}\n"
+        with open('booklist.csv', 'w') as bl:
+            for b in self.booklist:
+                details = f"{b[0].strip()}, {b[1].strip()}, {b[2].strip()}, {b[3].strip()}\n"
                 bl.write(details)
 
 
     def add_book(self, book_details):
 
-        self.new_books.append(book_details)
         self.booklist.append(book_details)
         self.save_books()
+    
+    def del_book(self, title):
+
+        for i, b in enumerate(self.booklist):
+            if b[0].lower() == title.lower():
+                del self.booklist[i]
         
+        self.save_books()
 
     def print_list(self):
         ctr = 1
@@ -61,7 +66,7 @@ class booklist():
 booklist = booklist()
 
 while True:
-    choice = input("[1] Add book\n[2] Print booklist\n[3] Search for Book\n[4] Marks as Read\n[Q] Quit\n")
+    choice = input("[1] Add book\n[2] Print booklist\n[3] Search for Book\n[4] Marks as Read\n[5] Delete Book\n[Q] Quit\n")
 
     if choice == '1':
         title, author, year = input("Please enter the title, author and year of the book seperated by commas: \n").split(',')
@@ -79,6 +84,10 @@ while True:
     elif choice == '4':
         title = input("Enter the title of the book to mark as read:\n")
         booklist.mark_read(title)
+
+    elif choice == '5':
+        title = input("Enter the title of the book to delete:\n")
+        booklist.del_book(title)
 
     elif choice.lower() == 'q':
         break
