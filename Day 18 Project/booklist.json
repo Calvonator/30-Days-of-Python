@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Book1",
+        "author": " Auth1",
+        "year": " 2000",
+        "read": "y"
+    },
+    {
+        "title": "Book2",
+        "author": " dude 2",
+        "year": " 2002",
+        "read": "y"
+    },
+    {
+        "title": "book3",
+        "author": " dude3",
+        "year": " 3002",
+        "read": "n"
+    }
+]
