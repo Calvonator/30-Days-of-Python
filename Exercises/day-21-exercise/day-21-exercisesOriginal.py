@@ -17,8 +17,13 @@ BOOKS_FILE = 'books.json'
 
 def menu():
     create_book_table()
-    user_input = input(USER_CHOICE)
+
+    user_input = ""
+    
     while user_input != 'q':
+
+        user_input = input(USER_CHOICE)
+
         if user_input == 'a':
             prompt_add_book()
         elif user_input == 'l':
@@ -28,7 +33,6 @@ def menu():
         elif user_input == 'd':
             prompt_delete_book()
 
-        user_input = input(USER_CHOICE)
 
 
 def create_book_table():

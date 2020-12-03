@@ -12,7 +12,7 @@ class booklist():
     def load_books(self):
 
         try:
-            with open('/home/calvin/Documents/gitrepos/30-Days-of-Python/Day 14 Project/booklist.csv', 'r') as bl:
+            with open('C:\\Users\\Ryley\\Documents\\gitrepos\\30-Days-of-Python\\Day 14 Project\\booklist.csv', 'r') as bl:
                 b = bl.readlines()
                 
                 for row in b:
