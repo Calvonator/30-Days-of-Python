@@ -81,13 +81,7 @@ deck = deck()
 
 deck.generate_deck()
 
-deck.print_cards()
-print()
-print()
 deck.shuffle()
-print()
-print()
-deck.print_cards()
 
 
 
