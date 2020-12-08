@@ -98,11 +98,10 @@ def roll_dice(dice, sides):
 
 def roll_average(rolls):
     #Calculates the average of a single roll or the collective average of multiple rolls
-    sum = 0
-
     roll_averages = []
 
     for roll in rolls:
+        sum = 0
         for dice in roll:
 
             sum += dice
@@ -111,7 +110,7 @@ def roll_average(rolls):
         roll_averages.append(roll_avg)
     
     sum = 0
-
+    print(roll_averages)
     for average in roll_averages:
         sum += average
 
